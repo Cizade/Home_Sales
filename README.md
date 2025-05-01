@@ -1,1 +1,3 @@
-# Home_Sales
+# Home Sales Analysis
+
+This project uses PySpark in a Colab notebook to analyze a cleaned *home_sales_revised.csv* dataset. After loading the data into a Spark DataFrame, we create a temporary SQL view and run four aggregate queries to find average home prices for key scenarios (four-bedroom sales by year, 3 bed/3 bath homes by build year, additional filters for square footage and floors, and average price by view rating above \$350 k). We demonstrate Spark’s performance features by caching the view, timing the heavy query before and after caching, writing the dataset partitioned by `date_built` to Parquet, and timing the same query on the Parquet read-back. Finally, we verify un-caching to show proper resource cleanup, giving a full end-to-end example of SparkSQL analytics, optimization, and data partitioning in one notebook. All code was written by myself, assistance and troubleshooting was provided by ChatGPT o3.
